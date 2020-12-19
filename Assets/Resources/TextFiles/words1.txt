@@ -1,0 +1,2 @@
+deltaTime, doo, coroutine, dawg, yield, hello, bartle, rotation, animation, blutengel, some, more, even, bad, good, hey, nice,
+good, Quaternion, Camera, while, for, class, abstract, great, markum, dansums, cool, butthead, beavis, trigger

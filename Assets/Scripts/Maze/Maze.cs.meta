@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b993e1b01f53e4d438fc4387d303e4ad
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - floorPrefab: {fileID: 100000, guid: 47e79c1b572a4f647aaecbe1434f86d5, type: 2}
+  - wallPrefab: {fileID: 100000, guid: 68069ead4b200784baa1ea602356c8dc, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

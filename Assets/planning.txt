@@ -1,0 +1,41 @@
+-a 2d top down game
+-we instantiate a grid of tiles
+-we instantitate a random end/start points (at the edges of the board)- the player starts at the start, and has to find his way through the tiles, to the end.
+-it's gonna be dark, so the player can't see anything. but there's some light, flying around randomly (point light) to provide some visuals.
+-player will move via typing: as random text/words appear on the screen - the player could move one tile at a time, if you want to move (R)ight, you would have to type something that is (R)ed, if you want ot move (B)ack, you'd have to type osmething (B)lue, etc.
+-the rate of which the texts are spawned, will increase over time - making it move difficult and frustrating. the screen could get filled with text.
+-there will be pitfalls tiles, if you walk over them you'll fall.
+-there will also be tiles, that hurts you - deals damage to you (simple damage, no fire, poison, etc)
+
+
+Typing:
+-Randomly 'moving' text will appear on random areas of the screen.
+	For that, create a 2DRandomMoving component. Which will move an object in an arbitrary fashion on the screen.
+	And a 2DRandomSpawner that spawns the text randomly on the screen.
+-Store all those texts/words in a list so that we could loop over, when the player starts typing something...
+-The text will ping pong if it touches the edges of the screen. A simple:
+if (pos.y >= height || pos.y <= 0) pos.y = -pos.y; same for the x coord.
+-When the player starts typing anything ->
+>> loop over the texts that are in the list
+>> if there's a match between the character that the player just typed and the first letter of a text in the list,
+	set that text to the currently typed text (press escape to exit out so that the player could type something else if he so wishes -
+	set current text to null)
+>> foreach correct character the player types, we increase the text index by one - till we reach the end of the text at which point the player
+	has typed the text correctly.
+>> at this point, an OnTextWritten event will fire (which the player is a subscriber to), passing over the text the player just wrote -
+	depending on the text color, the player will move accordingly.
+	Red: Right
+	Blue: Back
+	Lime: Left
+	French Rose (Kind of pink): Forward
+	The colors are just a "Color". The directions are just a Vector2
+	Right: (1, 0)
+	Left:  (-1, 0)
+	Up:	   (0, 1)
+	Down:  (0, -1)
+
+Some ideas:
+[DONE - added arrows, and a CurrentTyped text] - Have a different way than colors to indicate the direction the text will move the player to.
+[DONE] - Stop the currently typed text at its position.
+[DONE - added sine movement, anything else could be added just as easy] - Add new moving methods
+- Fix the text width/height overflow when going to the edges of the screen.

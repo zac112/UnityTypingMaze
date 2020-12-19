@@ -1,0 +1,9 @@
+Library/
+obj/
+*.sln
+.dropbox
+*.csproj
+desktop.ini
+.dropbox
+.dropbox.attr
+*.booproj
